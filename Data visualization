@@ -1,0 +1,84 @@
+#to import pandas library (makes data visualization easy)
+import pandas as pd 
+#to matplotlib library (to plot graphs)
+import matplotlib.pyplot as mat
+#to import numpy library (mathematical operations on array)
+import numpy as np
+#to create dictionary 
+d = {   'NAME ' :pd.Series(['ABC','AQW','NHY','CBY','SPO','LHG','NZR','MLG','AUF','DDX']),
+        'MATHS' :pd.Series([50,84,56,88,63,93,56,65,78,89]),
+        'EC' :pd.Series([70,62,98,95,55,85,45,59,43,67]),
+        'SS' :pd.Series([64,75,45,76,56,71,75,45,76,62]),
+        'AC' :pd.Series([43,46,61,84,84,65,46,61,84,75]),
+        'DE' :pd.Series([51,74,73,79,95,58,74,73,79,46]),}
+#intialising dataframe(to store data in standard way)
+df=pd.DataFrame(d)
+#to get output
+print (df)
+#for pie chart 
+mat.pie(df['MATHS'])
+#for pie chart 
+mat.pie(df['EC'])
+
+#for Histogram
+mat.hist(df['MATHS'])
+#for Histogram
+mat.hist(df['EC'])
+
+#for bar graph
+mat.bar(df['NAME '],df['SS'])
+mat.xlabel('NAME') #for x axis
+mat.ylabel('SS') #for y axis
+#for bar graph
+mat.bar(df['NAME '],df['AC'])
+mat.xlabel('NAME') #for x axis
+mat.ylabel('AC') #for y axis
+
+#for line chart
+mat.plot(df['NAME '],df['EC'])
+#for line chart
+mat.plot(df['NAME '],df['DE'])
+
+#for scatter plot 
+mat.scatter(df['NAME '],df['MATHS'])
+#for scatter plot 
+mat.scatter(df['NAME '],df['SS'])
+
+#to import statistics application from scipy library 
+from scipy import stats
+
+#to find Harmonic mean in python 
+print(stats.hmean(df['MATHS']))
+#to find Harmonic mean in python 
+print(stats.hmean(df['EC']))
+
+#to find geometric mean 
+print(stats.gmean(df['AC']))
+#to find geometric mean 
+print(stats.gmean(df['DE']))
+
+#to find Median
+print(np.median(df['SS']))
+#use of numpy library
+#to find Median
+print(np.median(df['AC']))
+#use of numpy library
+
+#to find Mode
+print(stats.mode(df['EC']))
+#to find Mode
+print(stats.mode(df['AC']))
+
+#to find standard deviation 
+print(np.std(df['MATHS']))
+#use of numpy library
+#to find standard deviation 
+print(np.std(df['EC']))
+#use of numpy library
+
+#to find variance 
+print(np.var(df['MATHS']))
+#use of numpy library
+#to find variance
+print(np.var(df['EC']))
+#use of numpy library
