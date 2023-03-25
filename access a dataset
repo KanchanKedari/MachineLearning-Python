@@ -1,0 +1,6 @@
+#import pandas library 
+import pandas as pd
+#download the dataset you want and upload it on your drive 
+#once it is uploaded in your drive copy its path 
+ds=pd.read_csv('/content/drive/MyDrive/kdrama.csv')
+print(ds)
